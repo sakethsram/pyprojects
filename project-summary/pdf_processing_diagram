@@ -1,0 +1,47 @@
+@startuml pdf_processing_diagram
+
+!define RECTANGLE class
+
+' Start of process
+start
+
+' PDF Loading Process
+:Load PDF;
+note right of Load PDF
+    - Load PDF from file system or URL
+    - Prepare the PDF content for processing
+end note
+
+' Chunking the PDF
+:Chunk PDF into smaller pieces;
+note right of Chunk PDF into smaller pieces
+    - Split the PDF into smaller chunks based on page or content
+    - Example chunk size could be 250 characters or 1 page
+end note
+
+' Embedding Process
+:Create Embeddings for each chunk;
+note right of Create Embeddings
+    - Use NLP models like BERT or GPT to embed text chunks
+    - Convert each chunk to vector format
+end note
+
+' Store Embeddings in Chroma DB
+:Store Embeddings in Chroma DB;
+note right of Store Embeddings
+    - Save the embeddings into Chroma database for efficient querying
+    - Use a vector database to store and index embeddings
+end note
+
+' Query Process
+:Query Chroma DB for relevant information;
+note right of Query Chroma DB
+    - Once embeddings are stored, queries can be made to the Chroma DB
+    - Ask questions related to the document
+    - Retrieve the most relevant chunks based on vector similarity
+end note
+
+' End of process
+stop
+
+@enduml
