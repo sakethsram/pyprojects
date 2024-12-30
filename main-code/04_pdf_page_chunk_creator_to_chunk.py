@@ -1,6 +1,6 @@
 # Import required library for reading PDFs
 import fitz  # PyMuPDF
-from chunk_util import create_chunks_with_overlap
+from utils import create_chunks_with_overlap
 
 def read_pdf_page(file_path, page_number=0):
     # Open the PDF file and read the specified page
