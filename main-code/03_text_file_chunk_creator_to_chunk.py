@@ -1,7 +1,8 @@
 # Import the necessary functions to read the text file and chunk the text
-from utils import create_chunks_with_overlap
+from utils import create_chunks
 
 def read_text_file(file_path):
+
     # Read and return the content of the file as a string
     with open(file_path, 'r', encoding='utf-8') as file:
         file_text = file.read()
@@ -14,7 +15,7 @@ def main():
     file_text = read_text_file(file_path)
     print(file_text) 
     #Get chunks with overlap from the text
-    text_chunks = create_chunks_with_overlap(file_text, chunk_size=250, overlap=150)
+    text_chunks = create_chunks(file_text, chunk_size=250, overlap=150)
 
     # Print the chunks
     # print("Text File Chunks:")

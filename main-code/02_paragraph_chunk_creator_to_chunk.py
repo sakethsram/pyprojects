@@ -1,5 +1,5 @@
 # Import the function to create chunks with overlap from chunk_util.py
-from utils import create_chunks_with_overlap
+from utils import create_chunks
 
 def main():
     # Sample text to chunk
@@ -10,7 +10,7 @@ def main():
     """
 
     # Chunk the paragraph with overlap
-    chunks1 = create_chunks_with_overlap(small, chunk_size=75, overlap=60)
+    chunks1 = create_chunks(small, chunk_size=75, overlap=60)
 
     # Print the resulting chunks
     

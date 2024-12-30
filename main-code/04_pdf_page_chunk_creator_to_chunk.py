@@ -1,6 +1,6 @@
 # Import required library for reading PDFs
 import fitz  # PyMuPDF
-from utils import create_chunks_with_overlap
+from utils import create_chunks
 
 def read_pdf_page(file_path, page_number=0):
     # Open the PDF file and read the specified page
@@ -17,7 +17,7 @@ def main():
     page_text = read_pdf_page(pdf_path, page_number)
 
     # Get chunks from the PDF page text
-    pdf_chunks = create_chunks_with_overlap(page_text, chunk_size=250, overlap=80)
+    pdf_chunks = create_chunks(page_text, chunk_size=250, overlap=80)
 
     # Print out the chunks
     print("PDF Page Chunks (First Page):")
